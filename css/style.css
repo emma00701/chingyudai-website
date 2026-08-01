@@ -133,7 +133,7 @@ body.intro-complete .intro-animation {
   z-index: 0;
   opacity: 0;
   pointer-events: none;
-  background: var(--pig-skin) url("bg-texture.jpg") repeat;
+  background: var(--pig-skin) url("../images/bg-texture.jpg") repeat;
   background-size: 800px auto;
 }
 
@@ -208,7 +208,7 @@ body.intro-active::before {
 }
 
 body.intro-complete::before {
-  background: var(--pig-skin) url("bg-texture.jpg") repeat;
+  background: var(--pig-skin) url("../images/bg-texture.jpg") repeat;
   background-size: 800px auto;
 }
 
@@ -688,7 +688,7 @@ h1, h2, p {
   align-items: center;
   justify-content: center;
   padding: 48px;
-  background: rgba(253, 231, 234, 0.97) url("bg-texture.jpg") repeat;
+  background: rgba(253, 231, 234, 0.97) url("../images/bg-texture.jpg") repeat;
   background-size: 800px auto;
 }
 
@@ -1238,7 +1238,7 @@ main.single {
   margin: 0 0 var(--footer-reveal-space);
   padding: clamp(30px, 5vw, 64px) max(calc((100vw - 1120px) / 2), 36px) 92px;
   align-items: start;
-  background: var(--pig-skin) url("bg-texture.jpg") repeat;
+  background: var(--pig-skin) url("../images/bg-texture.jpg") repeat;
   background-size: 800px auto;
 }
 
