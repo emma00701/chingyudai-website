@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ching Yu Dai</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=25">
+</head>
+<body class="intro-active">
+
+<div class="intro-animation" aria-hidden="true" onclick="enterSite()">
+  <p class="intro-greeting">Hi there! This is Emma &lt;3</p>
+  <div class="intro-pig">
+    <img class="intro-pig-emma" src="pig-emma.png?v=4" alt="">
+    <img class="intro-pig-line" src="pig-outline-only.png?v=4" alt="">
+    <img class="intro-pig-color" src="favicon-full.jpg" alt="">
+  </div>
+  <img class="intro-clickme" src="icons/clickme.png" alt="click me!">
+</div>
+
+<div class="layout" id="top">
+
+  <!-- Left vertical nav -->
+  <aside class="side-nav" aria-label="Site navigation">
+    <a class="nav-icon" href="#top" aria-label="My World">
+      <img src="icons/home.png" alt="My World">
+    </a>
+    <a class="nav-icon" href="#work" aria-label="Gallery">
+      <img src="icons/gallery.png" alt="Gallery">
+    </a>
+    <a class="nav-icon" href="#about" aria-label="About me">
+      <img src="icons/about.png" alt="About me">
+    </a>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content">
+    <section class="lede">
+      <h1>Hi! I'm Emma Dai</h1>
+      <p class="lede-line">I'm a senior studying <a class="lede-underline" href="#">Information Science</a>.</p>
+      <p class="lede-line">I'm passionate about exploring <span class="squiggle">marketing</span>.</p>
+      <div class="lede-headshot">
+        <img src="headshot.JPG" alt="Portrait of Emma Dai">
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <p class="section-tag">Work</p>
+      <div class="work-list" id="work-list"></div>
+    </section>
+
+    <section class="about" id="about">
+      <p class="section-tag">About</p>
+      <div class="about-copy">
+        <p class="about-lead">Alongside my studies, I make art — painting, drawing, and three-dimensional work — exploring memory, perspective, and the emotional weight of everyday spaces.</p>
+        <a class="resume-link" href="resume.html" aria-label="View my résumé">
+          <img src="icons/resume.png" alt="Résumé">
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Footer bar -->
+<footer class="landing-footer" id="contact">
+  <div class="foot-left">
+    <span class="foot-label">Last updated</span>
+    <span>June 2026</span>
+  </div>
+
+  <div class="foot-center">
+    <div class="note-card">
+      <p class="note-title">note from Emma</p>
+      <p class="note-body">Hi, thank you for being here &lt;3</p>
+    </div>
+    <div class="socials">
+      <a class="social-btn" href="mailto:chingyudai7@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      </a>
+      <a class="social-btn" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.8-2.05 3.7-2.05 3.96 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z"/></svg>
+      </a>
+      <a class="social-btn" href="https://instagram.com/emma11111118" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="foot-right">
+    <span class="foot-label">Currently in</span>
+    <span>New York</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">×</button>
+  <div class="lightbox-inner">
+    <div class="lightbox-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <div class="lightbox-info">
+      <h2 id="lb-title"></h2>
+      <p class="lightbox-meta" id="lb-meta"></p>
+      <p class="lightbox-desc" id="lb-desc"></p>
+    </div>
+  </div>
+  <div class="lightbox-nav">
+    <button onclick="lbNav(-1)">← Prev</button>
+    <button onclick="lbNav(1)">Next →</button>
+  </div>
+</div>
+
+<script src="script.js?v=25"></script>
+</body>
+</html>
