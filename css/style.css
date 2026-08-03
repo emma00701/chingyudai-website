@@ -19,7 +19,7 @@ html {
 
 body {
   margin: 0;
-  background: #fff;
+  background: var(--pig-skin) url("../images/bg-texture.jpg") repeat;
   background-size: 800px auto;
   color: var(--ink);
   font-family: 'Cormorant Garamond', Georgia, serif;
@@ -122,7 +122,7 @@ body.intro-complete .intro-clickme {
 }
 
 body.intro-complete .intro-animation {
-  animation: introFade 900ms ease 1.35s forwards;
+  animation: introFade 400ms ease 1.6s forwards;
 }
 
 /* textured layer that fades in during the zoom so the reveal matches the page */
@@ -144,8 +144,8 @@ body.intro-complete .intro-animation::after {
 body.intro-complete .site-header,
 body.intro-complete main,
 body.intro-complete footer {
-  transform-origin: 53% 27%;
-  animation: siteAppear 1100ms cubic-bezier(0.22, 1, 0.36, 1) 1.15s both;
+  transform-origin: 82% 64%;
+  animation: siteAppear 1000ms cubic-bezier(0.22, 1, 0.36, 1) 1.3s both;
 }
 
 .intro-pig {
@@ -154,13 +154,13 @@ body.intro-complete footer {
   margin: auto;
   width: clamp(150px, 22vw, 260px);
   height: clamp(150px, 22vw, 260px);
-  transform-origin: 53% 27%;
+  transform-origin: 82% 64%;
   z-index: 1;
   animation: pigFloat 3s ease-in-out 5s infinite alternate;
 }
 
 body.intro-complete .intro-pig {
-  animation: faviconZoom 1.35s cubic-bezier(0.7, 0, 0.18, 1) forwards;
+  animation: faviconZoom 1.6s cubic-bezier(0.6, 0, 0.4, 1) forwards;
 }
 
 .intro-pig-emma,
@@ -194,28 +194,6 @@ body.intro-complete .intro-pig {
   animation: pigDrawRL 1.8s ease-in-out 3.1s forwards;
 }
 
-body.intro-active::before,
-body.intro-complete::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 150;
-  pointer-events: none;
-}
-
-body.intro-active::before {
-  background: #fff;
-}
-
-body.intro-complete::before {
-  background: var(--pig-skin) url("../images/bg-texture.jpg") repeat;
-  background-size: 800px auto;
-}
-
-body.intro-complete::before {
-  animation: pageUnveil 950ms ease 1.42s forwards;
-}
-
 @keyframes pigDrawLR {
   from { clip-path: inset(0 100% 0 0); }
   to   { clip-path: inset(0 0 0 0); }
@@ -234,16 +212,16 @@ body.intro-complete::before {
   to { transform: translateY(-10px) rotate(1deg); }
 }
 
+/* the pig scales up and dissolves at the same time, so by the time it's
+   large enough to show pixel texture, it has already faded into the flat
+   pig-skin backdrop behind it (see .intro-animation::after) */
 @keyframes faviconZoom {
-  0%   { transform: scale(1); }
-  100% { transform: scale(30); }
+  0%   { transform: scale(1); opacity: 1; }
+  55%  { opacity: 1; }
+  100% { transform: scale(30); opacity: 0; }
 }
 
 @keyframes introFade {
-  to { opacity: 0; visibility: hidden; }
-}
-
-@keyframes pageUnveil {
   to { opacity: 0; visibility: hidden; }
 }
 
@@ -656,7 +634,7 @@ h1, h2, p {
 .gallery-thumb {
   display: block;
   overflow: hidden;
-  background: var(--soft);
+  background: #fff;
 }
 
 .gallery-thumb img {
@@ -701,7 +679,7 @@ h1, h2, p {
 .snapshot-media.img-fallback {
   position: relative;
   aspect-ratio: 4 / 5;
-  background: var(--soft) url("../images/pig-outline-only.png") no-repeat center/40% auto;
+  background: #fff url("../images/pig-outline-only.png") no-repeat center/40% auto;
 }
 
 .snapshot-media.img-fallback {
@@ -762,7 +740,7 @@ h1, h2, p {
 .lightbox-img-wrap.img-fallback {
   aspect-ratio: 4 / 3;
   max-height: 78vh;
-  background: var(--soft) url("../images/pig-outline-only.png") no-repeat center/25% auto;
+  background: #fff url("../images/pig-outline-only.png") no-repeat center/25% auto;
 }
 
 .lightbox-img-wrap.img-fallback img {
