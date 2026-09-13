@@ -34,7 +34,7 @@ let currentLbIndex = 0;
 
 /* shows the pig-outline placeholder in place of a photo that hasn't been added yet */
 function imgFallback(imgEl) {
-  const wrap = imgEl.closest('.gallery-thumb, .snapshot-media, .lightbox-img-wrap');
+  const wrap = imgEl.closest('.gallery-thumb, .lightbox-img-wrap');
   if (wrap) wrap.classList.add('img-fallback');
 }
 
