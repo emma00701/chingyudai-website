@@ -20,8 +20,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--pig-skin) url("../images/bg-texture.jpg") repeat;
-  background-size: 800px auto;
+  background: #fff;
   color: var(--ink);
   font-family: 'Cormorant Garamond', Georgia, serif;
 }
@@ -126,22 +125,6 @@ body.intro-complete .intro-animation {
   animation: introFade 250ms ease 150ms forwards;
 }
 
-/* textured layer that fades in during the flash so the reveal matches the page */
-.intro-animation::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0;
-  pointer-events: none;
-  background: var(--pig-skin) url("../images/bg-texture.jpg") repeat;
-  background-size: 800px auto;
-}
-
-body.intro-complete .intro-animation::after {
-  animation: texIn 200ms ease forwards;
-}
-
 body.intro-complete .site-header,
 body.intro-complete main,
 body.intro-complete footer {
@@ -204,21 +187,17 @@ body.intro-complete .intro-pig {
   to   { clip-path: inset(0 0 0 0); }
 }
 
-@keyframes texIn {
-  to { opacity: 1; }
-}
-
 @keyframes pigFloat {
   to { transform: translateY(-10px) rotate(1deg); }
 }
 
-/* the pig scales up and dissolves at the same time, so by the time it's
-   large enough to show pixel texture, it has already faded into the flat
-   pig-skin backdrop behind it (see .intro-animation::after) */
-@keyframes faviconZoom {
-  0%   { transform: scale(1); opacity: 1; }
-  55%  { opacity: 1; }
-  100% { transform: scale(30); opacity: 0; }
+@keyframes pigFlashOut {
+  to { opacity: 0; }
+}
+
+@keyframes siteFlashIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes introFade {
@@ -369,7 +348,8 @@ h1, h2, p {
 }
 
 .welcome-visual {
-  margin-top: clamp(28px, 5vw, 56px);
+  margin-top: clamp(12px, 2.2vw, 28px);
+  margin-left: clamp(24px, 9vw, 115px);
 }
 
 .welcome-visual img {
@@ -378,21 +358,31 @@ h1, h2, p {
   height: auto;
 }
 
-.hero-headline {
-  text-align: center;
-  margin-top: clamp(18px, 4vw, 36px);
+/* About page: name sits beside the headline, not above it */
+.hero-top-row {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: clamp(16px, 4vw, 48px);
 }
 
-.hero-headline h2 {
-  margin: 0 0 22px;
+.hero-top-row .hero-name {
+  flex: 0 0 auto;
+}
+
+.hero-headline-title {
+  flex: 1 1 320px;
+  margin: 0;
+  text-align: center;
   font-size: clamp(34px, 4.6vw, 52px);
   font-weight: 600;
   color: var(--maroon);
 }
 
 .hero-bio {
-  margin: 0 auto;
+  margin: clamp(18px, 4vw, 36px) auto 0;
   max-width: 640px;
+  text-align: center;
   font-size: clamp(18px, 2vw, 21px);
   line-height: 1.6;
   color: var(--maroon);
