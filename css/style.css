@@ -213,7 +213,10 @@ body.intro-complete .intro-pig {
 .site-header {
   min-height: 132px;
   padding: 38px 34px 28px;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff;
 }
 
 .icon-nav {
@@ -268,18 +271,9 @@ body.intro-complete .intro-pig {
   text-decoration: none;
 }
 
-.page {
-  display: none;
-  animation: rise 360ms ease both;
-}
-
-.page.active {
-  display: block;
-}
-
-@keyframes rise {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+/* stacked single-page sections, jumped to via nav anchors */
+.section-divider {
+  border-top: 1px solid var(--line);
 }
 
 .eyebrow {
@@ -328,6 +322,7 @@ h1, h2, p {
   min-height: calc(100vh - 210px);
   margin: 0 auto;
   padding: 44px 0 82px;
+  scroll-margin-top: 200px;
 }
 
 .section-heading {
