@@ -386,20 +386,12 @@ h1, h2, p {
   color: var(--maroon);
 }
 
-.about-columns {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(240px, 380px);
-  gap: clamp(32px, 6vw, 72px);
-  align-items: start;
-  margin-top: clamp(18px, 4vw, 36px);
-}
-
 .hero-bio {
-  margin: 0;
-  max-width: 560px;
-  text-align: left;
+  margin: clamp(18px, 4vw, 36px) auto 0;
+  max-width: 640px;
+  text-align: center;
   font-size: clamp(18px, 2vw, 21px);
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--maroon);
 }
 
@@ -408,11 +400,7 @@ h1, h2, p {
 }
 
 .skyline-visual {
-  padding: 10px;
-  background: #fff;
-  border: 1px solid var(--line);
-  box-shadow: 0 14px 30px rgba(90, 40, 45, 0.14);
-  transform: rotate(-2deg);
+  margin-top: clamp(30px, 6vw, 60px);
 }
 
 .skyline-visual img {
@@ -421,8 +409,63 @@ h1, h2, p {
   height: auto;
 }
 
+/* About Me / Experience — added below the intro, no photo */
+.about-extra {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 1fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
+  margin-top: clamp(40px, 7vw, 76px);
+}
+
+.about-extra-heading {
+  margin: 0 0 14px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--maroon);
+}
+
+.about-extra-col p {
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--maroon);
+}
+
+.about-extra-col p:last-child {
+  margin-bottom: 0;
+}
+
+.experience-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.experience-list li {
+  margin-bottom: 20px;
+}
+
+.exp-role {
+  display: block;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--maroon);
+}
+
+.exp-role strong {
+  font-weight: 700;
+}
+
+.exp-year {
+  display: block;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--maroon);
+}
+
 @media (max-width: 760px) {
-  .about-columns {
+  .about-extra {
     grid-template-columns: 1fr;
   }
 }
