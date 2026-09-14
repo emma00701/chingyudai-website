@@ -350,6 +350,10 @@ h1, h2, p {
   opacity: 0.75;
 }
 
+.hero-name-link:active h1 {
+  color: #FFB4B4;
+}
+
 .welcome-visual {
   margin-top: 4px;
   margin-left: clamp(24px, 9vw, 115px);
