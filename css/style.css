@@ -271,11 +271,6 @@ body.intro-complete .intro-pig {
   text-decoration: none;
 }
 
-/* stacked single-page sections, jumped to via nav anchors */
-.section-divider {
-  border-top: 1px solid var(--line);
-}
-
 .eyebrow {
   margin: 0 0 10px;
   color: var(--accent);
@@ -342,6 +337,17 @@ h1, h2, p {
   font-weight: 400;
   line-height: 1.05;
   color: var(--maroon);
+}
+
+.hero-name-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 180ms ease;
+}
+
+.hero-name-link:hover {
+  opacity: 0.75;
 }
 
 .welcome-visual {
