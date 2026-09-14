@@ -386,12 +386,20 @@ h1, h2, p {
   color: var(--maroon);
 }
 
+.about-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 380px);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
+  margin-top: clamp(18px, 4vw, 36px);
+}
+
 .hero-bio {
-  margin: clamp(18px, 4vw, 36px) auto 0;
-  max-width: 640px;
-  text-align: center;
+  margin: 0;
+  max-width: 560px;
+  text-align: left;
   font-size: clamp(18px, 2vw, 21px);
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--maroon);
 }
 
@@ -400,13 +408,23 @@ h1, h2, p {
 }
 
 .skyline-visual {
-  margin-top: clamp(30px, 6vw, 60px);
+  padding: 10px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 30px rgba(90, 40, 45, 0.14);
+  transform: rotate(-2deg);
 }
 
 .skyline-visual img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+@media (max-width: 760px) {
+  .about-columns {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== Résumé page ===== */
