@@ -32,6 +32,12 @@ const CATEGORY_LABELS = { paintings: 'Painting', drawings: 'Drawing', '3d': '3D 
 let currentGallery = 'paintings';
 let currentLbIndex = 0;
 
+/* shows the pig-outline placeholder in place of a photo that hasn't been added yet */
+function imgFallback(imgEl) {
+  const wrap = imgEl.closest('.gallery-thumb, .lightbox-img-wrap');
+  if (wrap) wrap.classList.add('img-fallback');
+}
+
 /* madhurima-style scannable work list */
 function renderWorkList() {
   const list = document.getElementById('work-list');
@@ -65,7 +71,7 @@ function showGallery(category) {
   grid.innerHTML = gallery.items.map((item, index) => `
     <button class="gallery-item" onclick="openLightbox('${category}', ${index})">
       <span class="gallery-thumb">
-        <img src="${item.src}" alt="${item.title}" loading="lazy">
+        <img src="${item.src}" alt="${item.title}" loading="lazy" onerror="imgFallback(this)">
       </span>
       <span class="gallery-caption">
         <span class="gallery-title">${item.title}</span>
@@ -85,8 +91,11 @@ function openLightbox(category, index) {
 
 function renderLightbox() {
   const item = GALLERIES[currentGallery].items[currentLbIndex];
-  document.getElementById('lb-img').src = item.src;
-  document.getElementById('lb-img').alt = item.title;
+  const img = document.getElementById('lb-img');
+  img.closest('.lightbox-img-wrap').classList.remove('img-fallback');
+  img.onerror = () => imgFallback(img);
+  img.src = item.src;
+  img.alt = item.title;
   document.getElementById('lb-title').textContent = item.title;
   document.getElementById('lb-meta').textContent = item.meta;
   document.getElementById('lb-desc').textContent = item.desc;
