@@ -480,14 +480,6 @@ h1, h2, p {
 }
 
 /* ===== Gallery section: plain image grid ===== */
-.gallery-heading {
-  margin: 0 0 32px;
-  font-size: clamp(28px, 3.4vw, 36px);
-  font-weight: 500;
-  font-style: italic;
-  color: var(--maroon);
-}
-
 .gallery-grid {
   column-count: 2;
   column-gap: 32px;
