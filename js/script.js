@@ -3,6 +3,7 @@ const EMOTIONS_FEAR_DESC = "The second model, representing fear, was made out of
 const EMOTIONS_ANGER_DESC = "the third model, representing anger, is made out of woodsticks and paper. I wanted to deliver how broken the emotions are when anger takes control of it through a dilapitated building. The windows are in dark colors in order to emphasize the structure.";
 const BLOCKMODEL_DESC = "The inspiration of this project was from one of my hobbies—assembling models. I finished this project with similar process of assembling models as well, made different components of each part then put them together. I chose the armour of a GUNDAM model to be the prototype of my main structure. Other parts were distributed sporadically around the main building are like the missiles and lasers launched by the armour.";
 const JUNKFOODHOUSE_DESC = "The inspiration of this model building is my ideal house using materials that I got from ordering or delievery food that were considered not very healthy. The straws and the molded pulp trays were from the bubble tea I would order on a daily basis, and the bamboo sticks were the skewers from the barbeque. I collected all of them from the summer, cleaned them, and glued them together to from a sense of space. The LED light on the bottom were tangled within the house, making the details from those particular materials stand out.";
+const GIANT_DESC = "How would the our perspective of the space that we are in? Growing up, as I got taller, my vision of shelves in the supermarket was gradually brought up, opening up more options for me to buy. However, when wandering around in a city, I was never tall enough to gain a new perspective for the buildings.\n\nI imagined two giants, tall and skinny, standing in front of the entrance of a street market in my neighborhood and took pictures from their point of view. The things they see entirely different from me, which inspired my to discover more about perspectives in real life and how that affects us.";
 
 const GALLERIES = {
   digital: {
@@ -65,10 +66,16 @@ const GALLERIES = {
     items: [
       { src: 'images/junkfoodhouse-1.jpg', title: 'Junk Food House', meta: 'Straws, molded pulp trays, bamboo sticks, wooden boards, LED light · L24 × W18 × H16 in', desc: JUNKFOODHOUSE_DESC }
     ]
+  },
+  giant: {
+    subtitle: 'Sculpture.',
+    items: [
+      { src: 'images/giant-1.jpg', title: 'Giant in a Small Town', meta: 'Wooden blocks, construction paper, ink, white gel pen · L17 × W11 × H4 in', desc: GIANT_DESC }
+    ]
   }
 };
 
-const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting', sculpture: '3D / Sculpture', blockmodel: '3D / Sculpture', junkfoodhouse: '3D / Sculpture' };
+const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting', sculpture: '3D / Sculpture', blockmodel: '3D / Sculpture', junkfoodhouse: '3D / Sculpture', giant: '3D / Sculpture' };
 
 let currentGallery = 'digital';
 let currentLbIndex = 0;
