@@ -579,7 +579,7 @@ h1, h2, p {
   position: fixed;
   inset: 0;
   z-index: 100;
-  align-items: center;
+  align-items: safe center;
   justify-content: center;
   padding: 40px;
   overflow-y: auto;
