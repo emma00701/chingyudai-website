@@ -72,10 +72,16 @@ const GALLERIES = {
     items: [
       { src: 'images/giant-1.jpg', title: 'Giant in a Small Town', meta: 'Wooden blocks, construction paper, ink, white gel pen · L17 × W11 × H4 in', desc: GIANT_DESC }
     ]
+  },
+  capitalismInFood: {
+    subtitle: 'Drawing.',
+    items: [
+      { src: 'images/capitalism-in-food.jpg', title: 'Capitalism in Food', meta: '' }
+    ]
   }
 };
 
-const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting', sculpture: '3D / Sculpture', blockmodel: '3D / Sculpture', junkfoodhouse: '3D / Sculpture', giant: '3D / Sculpture' };
+const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting', sculpture: '3D / Sculpture', blockmodel: '3D / Sculpture', junkfoodhouse: '3D / Sculpture', giant: '3D / Sculpture', capitalismInFood: 'Drawing' };
 
 let currentGallery = 'digital';
 let currentLbIndex = 0;
