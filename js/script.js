@@ -2,20 +2,38 @@ const GALLERIES = {
   digital: {
     subtitle: 'Product and UX design work.',
     items: [
-      { src: 'images/Kuma_1.png', title: 'Kuma', meta: 'AI Personal Expense Tracking Agent', desc: 'AI Personal Expense Tracking Agent', link: 'https://get-kuma.com' }
+      { src: 'images/Kuma_1.png', title: 'Kuma', meta: 'AI Personal Expense Tracking Agent', link: 'https://get-kuma.com' }
     ]
   },
   circus: {
     subtitle: 'Acrylics, oil pastels.',
     items: [
-      { src: 'images/circus_1.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels', desc: '' },
-      { src: 'images/circus_2.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels', desc: '' },
-      { src: 'images/circus_3.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels', desc: '' }
+      { src: 'images/circus_1.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels' },
+      { src: 'images/circus_2.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels' },
+      { src: 'images/circus_3.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels' }
+    ]
+  },
+  joker: {
+    subtitle: 'Painting.',
+    items: [
+      { src: 'images/painting-joker.jpg', title: 'Untitled', meta: '' }
+    ]
+  },
+  figures: {
+    subtitle: 'Painting.',
+    items: [
+      { src: 'images/painting-figures.jpg', title: 'Untitled', meta: '' }
+    ]
+  },
+  market: {
+    subtitle: 'Painting.',
+    items: [
+      { src: 'images/painting-market.jpg', title: 'Untitled', meta: '' }
     ]
   }
 };
 
-const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting' };
+const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting' };
 
 let currentGallery = 'digital';
 let currentLbIndex = 0;
@@ -88,7 +106,7 @@ function renderLightbox() {
   img.alt = item.title;
   document.getElementById('lb-title').textContent = item.title;
   document.getElementById('lb-meta').textContent = item.meta;
-  document.getElementById('lb-desc').textContent = item.desc;
+  document.getElementById('lb-meta-sep').hidden = !item.meta;
 
   const thumbs = document.getElementById('lb-thumbs');
   if (thumbs) {

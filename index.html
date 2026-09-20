@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=44">
+<link rel="stylesheet" href="css/style.css?v=46">
 </head>
 <body class="intro-active">
 
@@ -119,16 +119,14 @@
 
 <div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
   <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">×</button>
-  <div class="lightbox-inner">
-    <div class="lightbox-thumbs" id="lb-thumbs" hidden></div>
+  <div class="lightbox-thumbs" id="lb-thumbs" hidden></div>
+  <div class="lightbox-stage">
     <div class="lightbox-img-wrap">
       <img id="lb-img" src="" alt="">
     </div>
-    <div class="lightbox-info">
-      <h2 id="lb-title"></h2>
-      <p class="lightbox-meta" id="lb-meta"></p>
-      <p class="lightbox-desc" id="lb-desc"></p>
-    </div>
+    <p class="lightbox-caption">
+      <span id="lb-title"></span><span class="lightbox-caption-sep" id="lb-meta-sep"> · </span><span id="lb-meta"></span>
+    </p>
   </div>
   <div class="lightbox-nav">
     <button onclick="lbNav(-1)">← Prev</button>
@@ -136,6 +134,6 @@
   </div>
 </div>
 
-<script src="js/script.js?v=36"></script>
+<script src="js/script.js?v=37"></script>
 </body>
 </html>
