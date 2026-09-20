@@ -35,7 +35,7 @@ const GALLERIES = {
   market: {
     subtitle: 'Painting.',
     items: [
-      { src: 'images/painting-market.jpg', title: 'Untitled', meta: '' }
+      { src: 'images/painting-market.jpg', title: 'Fruit Markets in Hong Kong', meta: 'Acrylic Painting' }
     ]
   },
   sculpture: {
