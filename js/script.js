@@ -1,6 +1,7 @@
 const EMOTIONS_JOY_DESC = "The first model, representing joy, was made out of clay, and reflectice triangle pieces I made from woodsticks and laser paper. GIven the reflective nature of the laser paper, I envisioned the memories from a dream were all captured and incapsulated by the triangole. However, I usally have multiple different memories all intertwined together, forming a dream that jumps from one memory to another. The pieces of reflective triangles are great mediums to illustrate such feelings.";
 const EMOTIONS_FEAR_DESC = "The second model, representing fear, was made out of woodsticks, boxes I made from PVC boards, and balls entangled by steel wires. This model has strong structure, yet they are hollow on the inside, creating a sense of fear and uncertainty.";
 const EMOTIONS_ANGER_DESC = "the third model, representing anger, is made out of woodsticks and paper. I wanted to deliver how broken the emotions are when anger takes control of it through a dilapitated building. The windows are in dark colors in order to emphasize the structure.";
+const BLOCKMODEL_DESC = "The inspiration of this project was from one of my hobbies—assembling models. I finished this project with similar process of assembling models as well, made different components of each part then put them together. I chose the armour of a GUNDAM model to be the prototype of my main structure. Other parts were distributed sporadically around the main building are like the missiles and lasers launched by the armour.";
 
 const GALLERIES = {
   digital: {
@@ -48,10 +49,20 @@ const GALLERIES = {
       { src: 'images/emotions-anger-2.jpg', title: 'Anger', meta: 'Woodsticks, paper', desc: EMOTIONS_ANGER_DESC },
       { src: 'images/emotions-anger-3.jpg', title: 'Anger', meta: 'Woodsticks, paper', desc: EMOTIONS_ANGER_DESC }
     ]
+  },
+  blockmodel: {
+    subtitle: 'Sculpture.',
+    items: [
+      { src: 'images/blockmodel-1.jpg', title: 'Untitled', meta: '' },
+      { src: 'images/blockmodel-2.jpg', title: 'Untitled', meta: '' },
+      { src: 'images/blockmodel-3.jpg', title: 'Untitled', meta: '' },
+      { src: 'images/blockmodel-4.jpg', title: 'Untitled', meta: '' },
+      { src: 'images/blockmodel-info.jpg', title: 'Untitled', meta: '', desc: BLOCKMODEL_DESC }
+    ]
   }
 };
 
-const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting', sculpture: '3D / Sculpture' };
+const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting', sculpture: '3D / Sculpture', blockmodel: '3D / Sculpture' };
 
 let currentGallery = 'digital';
 let currentLbIndex = 0;
