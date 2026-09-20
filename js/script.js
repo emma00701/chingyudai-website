@@ -76,7 +76,7 @@ const GALLERIES = {
   capitalismInFood: {
     subtitle: 'Drawing.',
     items: [
-      { src: 'images/capitalism-in-food.jpg', title: 'Capitalism in Food', meta: '' }
+      { src: 'images/capitalism-in-food.jpg', title: 'Capitalism in Food', meta: 'Ink, posca marker' }
     ]
   }
 };
