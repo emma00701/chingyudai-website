@@ -1,30 +1,4 @@
 const GALLERIES = {
-  paintings: {
-    subtitle: 'Acrylic, colored pencil, crayon, and mixed media.',
-    items: [
-      { src: 'images/paintings/markets.jpg', title: 'Fruit and Vegetable Market in Hong Kong', meta: '18 × 20 in · acrylic on canvas', desc: 'A vibrant scene of daily life in Hong Kong, with vendors, color, and movement rendered in bold, expressive brushwork.' },
-      { src: 'images/paintings/joker.jpg', title: 'The Joker', meta: '16 × 20 in · mixed media on canvas', desc: 'A figure surrounded by playing cards, exploring chance, performance, and the faces we wear.' },
-      { src: 'images/paintings/circus.jpg', title: 'The Forgotten Childhood', meta: '16 × 20 in · colored pencil, crayon, acrylic on paper', desc: 'The multifaceted positions held by circus performers represent the many talents a young self aspires to acquire.' },
-      { src: 'images/paintings/circus-large.jpg', title: 'The Forgotten Childhood (detail)', meta: 'close-up · colored pencil, crayon, acrylic on paper', desc: 'Close-up detail revealing the dense layering of color and texture across the surface.' },
-      { src: 'images/paintings/circus-small.jpg', title: 'The Forgotten Childhood (detail II)', meta: 'close-up · colored pencil, crayon, acrylic on paper', desc: 'A second close-up capturing the intricate mark-making and layered media.' }
-    ]
-  },
-  drawings: {
-    subtitle: 'Ink, pencil, charcoal, and mixed media on paper.',
-    items: [
-      { src: 'images/drawings/hallway.jpg', title: 'Last Hope in the Middle of the Covid-19 Outbreak', meta: '16 × 20 in · pencil, charcoal, acrylic on paper', desc: 'Confetti remaining in the hall after everyone left campus in spring 2020, with a lone red boat adrift in the silence.' },
-      { src: 'images/drawings/capitalism-food.jpg', title: 'Capitalism in Food', meta: '23 × 33 in · ink and posca markers on paper', desc: 'Four vignettes examining food and capitalism through surrealist industrial elements.' }
-    ]
-  },
-  '3d': {
-    subtitle: 'Sculpture, architectural models, and mixed materials.',
-    items: [
-      { src: 'images/3d/block.jpg', title: 'Block', meta: 'dutch paper, wooden strips & boards · 2022', desc: 'Inspired by model assembly, this piece draws from depression-era architecture and the armor structure of a Gundam model.' },
-      { src: 'images/3d/emotions.jpg', title: 'Emotions: Joy, Fear & Anger', meta: 'clay, paper, woodsticks, PVC boards, steel wire · 2022', desc: 'Three sculptures representing distinct emotional states: joy, fear, and anger.' },
-      { src: 'images/3d/junk-food-house.jpg', title: 'Junk Food House', meta: 'straws, molded pulp trays, bamboo, LED light', desc: 'Built entirely from junk-food packaging and lit from within by red LED.' },
-      { src: 'images/3d/giant-small-town.jpg', title: 'Giant in a Small Town', meta: 'wood, ink, construction paper', desc: 'Two elongated giants stand at the entrance of a street market, exploring how scale changes perspective in the city.' }
-    ]
-  },
   digital: {
     subtitle: 'Product and UX design work.',
     items: [
@@ -33,9 +7,9 @@ const GALLERIES = {
   }
 };
 
-const CATEGORY_LABELS = { paintings: 'Painting', drawings: 'Drawing', '3d': '3D / Sculpture', digital: 'Digital / Product' };
+const CATEGORY_LABELS = { digital: 'Digital / Product' };
 
-let currentGallery = 'paintings';
+let currentGallery = 'digital';
 let currentLbIndex = 0;
 
 /* shows the pig-outline placeholder in place of a photo that hasn't been added yet */
