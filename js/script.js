@@ -2,6 +2,7 @@ const EMOTIONS_JOY_DESC = "The first model, representing joy, was made out of cl
 const EMOTIONS_FEAR_DESC = "The second model, representing fear, was made out of woodsticks, boxes I made from PVC boards, and balls entangled by steel wires. This model has strong structure, yet they are hollow on the inside, creating a sense of fear and uncertainty.";
 const EMOTIONS_ANGER_DESC = "the third model, representing anger, is made out of woodsticks and paper. I wanted to deliver how broken the emotions are when anger takes control of it through a dilapitated building. The windows are in dark colors in order to emphasize the structure.";
 const BLOCKMODEL_DESC = "The inspiration of this project was from one of my hobbies—assembling models. I finished this project with similar process of assembling models as well, made different components of each part then put them together. I chose the armour of a GUNDAM model to be the prototype of my main structure. Other parts were distributed sporadically around the main building are like the missiles and lasers launched by the armour.";
+const JUNKFOODHOUSE_DESC = "The inspiration of this model building is my ideal house using materials that I got from ordering or delievery food that were considered not very healthy. The straws and the molded pulp trays were from the bubble tea I would order on a daily basis, and the bamboo sticks were the skewers from the barbeque. I collected all of them from the summer, cleaned them, and glued them together to from a sense of space. The LED light on the bottom were tangled within the house, making the details from those particular materials stand out.";
 
 const GALLERIES = {
   digital: {
@@ -58,10 +59,16 @@ const GALLERIES = {
       { src: 'images/blockmodel-3.jpg', title: 'Untitled', meta: '' },
       { src: 'images/blockmodel-4.jpg', title: 'Untitled', meta: '', desc: BLOCKMODEL_DESC }
     ]
+  },
+  junkfoodhouse: {
+    subtitle: 'Sculpture.',
+    items: [
+      { src: 'images/junkfoodhouse-1.jpg', title: 'Junk Food House', meta: 'Straws, molded pulp trays, bamboo sticks, wooden boards, LED light · L24 × W18 × H16 in', desc: JUNKFOODHOUSE_DESC }
+    ]
   }
 };
 
-const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting', sculpture: '3D / Sculpture', blockmodel: '3D / Sculpture' };
+const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting', sculpture: '3D / Sculpture', blockmodel: '3D / Sculpture', junkfoodhouse: '3D / Sculpture' };
 
 let currentGallery = 'digital';
 let currentLbIndex = 0;
