@@ -473,16 +473,23 @@ h1, h2, p {
   margin-top: 40px;
 }
 
-/* ===== Gallery section: Airla-style numbered grid ===== */
+/* ===== Gallery section: plain image grid ===== */
+.gallery-heading {
+  margin: 0 0 32px;
+  font-size: clamp(28px, 3.4vw, 36px);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--maroon);
+}
+
 .gallery-grid {
-  margin-top: 38px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 44px 22px;
+  gap: 24px;
 }
 
 .gallery-item {
-  border: 0;
+  border: 1px solid var(--line);
   border-radius: 0;
   padding: 0;
   background: transparent;
@@ -499,7 +506,7 @@ h1, h2, p {
 .gallery-thumb img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   transition: transform 350ms ease;
 }
@@ -508,47 +515,10 @@ h1, h2, p {
   transform: scale(1.04);
 }
 
-.gallery-caption {
-  display: block;
-  padding-top: 14px;
-}
-
-.gallery-caption-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.gallery-title {
-  display: block;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--maroon);
-}
-
-.gallery-index {
-  flex: 0 0 auto;
-  color: var(--muted);
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-}
-
-.gallery-desc {
-  display: block;
-  padding-top: 6px;
-  color: var(--muted);
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 12px;
-  line-height: 1.55;
-}
-
 /* Placeholder shown until a real artwork photo exists at the given path */
 .gallery-thumb.img-fallback {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   background: #fff url("../images/pig-outline-only.png") no-repeat center/40% auto;
 }
 
@@ -728,11 +698,7 @@ h1, h2, p {
 
   .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px 12px;
-  }
-
-  .gallery-title {
-    font-size: 17px;
+    gap: 16px;
   }
 
   .lightbox {

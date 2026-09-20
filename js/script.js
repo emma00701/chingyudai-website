@@ -57,7 +57,7 @@ function renderWorkList() {
   list.innerHTML = rows;
 }
 
-/* Airla-style numbered grid: every item across every category, one flat sequence */
+/* plain image grid: every item across every category, one flat sequence */
 function renderGalleryGrid() {
   const grid = document.getElementById('gallery-grid');
   if (!grid) return;
@@ -65,17 +65,10 @@ function renderGalleryGrid() {
   Object.keys(GALLERIES).forEach(category => {
     GALLERIES[category].items.forEach((item, index) => flat.push({ category, index, item }));
   });
-  grid.innerHTML = flat.map((entry, position) => `
+  grid.innerHTML = flat.map(entry => `
     <button class="gallery-item" onclick="openLightbox('${entry.category}', ${entry.index})">
       <span class="gallery-thumb">
         <img src="${entry.item.src}" alt="${entry.item.title}" loading="lazy" onerror="imgFallback(this)">
-      </span>
-      <span class="gallery-caption">
-        <span class="gallery-caption-row">
-          <span class="gallery-title">${entry.item.title}</span>
-          <span class="gallery-index">${String(position + 1).padStart(2, '0')}</span>
-        </span>
-        <span class="gallery-desc">${entry.item.desc}</span>
       </span>
     </button>
   `).join('');
