@@ -28,7 +28,7 @@ const GALLERIES = {
   digital: {
     subtitle: 'Product and UX design work.',
     items: [
-      { src: 'images/digital/kuma.png', title: 'Kuma', meta: 'AI Personal Expense Tracking Agent', desc: 'AI Personal Expense Tracking Agent' }
+      { src: 'images/digital/kuma.png', title: 'Kuma', meta: 'AI Personal Expense Tracking Agent', desc: 'AI Personal Expense Tracking Agent', link: 'https://get-kuma.com' }
     ]
   }
 };
@@ -71,8 +71,13 @@ function renderGalleryGrid() {
   Object.keys(GALLERIES).forEach(category => {
     GALLERIES[category].items.forEach((item, index) => flat.push({ category, index, item }));
   });
-  grid.innerHTML = flat.map(entry => `
-    <button class="gallery-item" onclick="openLightbox('${entry.category}', ${entry.index})">
+  grid.innerHTML = flat.map(entry => {
+    const tag = entry.item.link ? 'a' : 'button';
+    const openAttr = entry.item.link
+      ? `href="${entry.item.link}" target="_blank" rel="noopener"`
+      : `onclick="openLightbox('${entry.category}', ${entry.index})"`;
+    return `
+    <${tag} class="gallery-item" ${openAttr}>
       <span class="gallery-thumb">
         <img src="${entry.item.src}" alt="${entry.item.title}" loading="lazy" onerror="imgFallback(this)">
       </span>
@@ -80,8 +85,9 @@ function renderGalleryGrid() {
         <span class="gallery-title">${entry.item.title}</span>
         <span class="gallery-meta">${entry.item.meta}</span>
       </span>
-    </button>
-  `).join('');
+    </${tag}>
+  `;
+  }).join('');
 }
 
 function openLightbox(category, index) {
