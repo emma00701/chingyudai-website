@@ -483,13 +483,16 @@ h1, h2, p {
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  column-count: 2;
+  column-gap: 32px;
 }
 
 .gallery-item {
-  border: 1px solid var(--line);
+  display: block;
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 36px;
+  border: 0;
   border-radius: 0;
   padding: 0;
   background: transparent;
@@ -506,13 +509,34 @@ h1, h2, p {
 .gallery-thumb img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
   transition: transform 350ms ease;
 }
 
 .gallery-item:hover .gallery-thumb img {
-  transform: scale(1.04);
+  transform: scale(1.02);
+}
+
+.gallery-caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 12px;
+}
+
+.gallery-title {
+  font-size: 17px;
+  font-style: italic;
+  color: var(--maroon);
+}
+
+.gallery-meta {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 12px;
+  text-align: right;
 }
 
 /* Placeholder shown until a real artwork photo exists at the given path */
@@ -697,8 +721,7 @@ h1, h2, p {
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    column-count: 1;
   }
 
   .lightbox {

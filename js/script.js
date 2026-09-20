@@ -70,6 +70,10 @@ function renderGalleryGrid() {
       <span class="gallery-thumb">
         <img src="${entry.item.src}" alt="${entry.item.title}" loading="lazy" onerror="imgFallback(this)">
       </span>
+      <span class="gallery-caption">
+        <span class="gallery-title">${entry.item.title}</span>
+        <span class="gallery-meta">${entry.item.meta}</span>
+      </span>
     </button>
   `).join('');
 }
