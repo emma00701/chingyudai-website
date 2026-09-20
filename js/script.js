@@ -2,7 +2,7 @@ const GALLERIES = {
   digital: {
     subtitle: 'Product and UX design work.',
     items: [
-      { src: 'images/digital/kuma.png', title: 'Kuma', meta: 'AI Personal Expense Tracking Agent', desc: 'AI Personal Expense Tracking Agent', link: 'https://get-kuma.com' }
+      { src: 'images/Kuma_1.png', title: 'Kuma', meta: 'AI Personal Expense Tracking Agent', desc: 'AI Personal Expense Tracking Agent', link: 'https://get-kuma.com' }
     ]
   }
 };
