@@ -574,7 +574,12 @@ h1, h2, p {
   align-items: center;
   justify-content: center;
   padding: 40px;
+  overflow-y: auto;
   background: #f7f2ec;
+}
+
+.lightbox-stage {
+  padding-bottom: 56px;
 }
 
 .lightbox.open {
@@ -673,6 +678,19 @@ h1, h2, p {
 .lightbox-caption-sep,
 .lightbox-caption #lb-meta {
   color: var(--muted);
+}
+
+.lightbox-desc {
+  margin: -6px 0 0;
+  max-width: 560px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(122, 85, 88, 0.85);
+}
+
+.lightbox-desc[hidden] {
+  display: none;
 }
 
 .lightbox-close {

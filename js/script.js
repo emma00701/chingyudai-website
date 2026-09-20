@@ -1,3 +1,7 @@
+const EMOTIONS_JOY_DESC = "The first model, representing joy, was made out of clay, and reflectice triangle pieces I made from woodsticks and laser paper. GIven the reflective nature of the laser paper, I envisioned the memories from a dream were all captured and incapsulated by the triangole. However, I usally have multiple different memories all intertwined together, forming a dream that jumps from one memory to another. The pieces of reflective triangles are great mediums to illustrate such feelings.";
+const EMOTIONS_FEAR_DESC = "The second model, representing fear, was made out of woodsticks, boxes I made from PVC boards, and balls entangled by steel wires. This model has strong structure, yet they are hollow on the inside, creating a sense of fear and uncertainty.";
+const EMOTIONS_ANGER_DESC = "the third model, representing anger, is made out of woodsticks and paper. I wanted to deliver how broken the emotions are when anger takes control of it through a dilapitated building. The windows are in dark colors in order to emphasize the structure.";
+
 const GALLERIES = {
   digital: {
     subtitle: 'Product and UX design work.',
@@ -33,9 +37,16 @@ const GALLERIES = {
   },
   sculpture: {
     subtitle: 'Sculpture.',
+    cover: 'images/emotions-cover.jpg',
+    coverTitle: 'Emotions: Joy, Fear & Anger',
+    coverMeta: 'Clay, woodsticks, PVC boards, steel wire, paper',
     items: [
-      { src: 'images/sculpture-1.jpg', title: 'Untitled', meta: '' },
-      { src: 'images/sculpture-2.webp', title: 'Untitled', meta: '' }
+      { src: 'images/sculpture-1.jpg', title: 'Joy', meta: 'Clay, woodsticks, reflective triangle pieces', desc: EMOTIONS_JOY_DESC },
+      { src: 'images/sculpture-2.webp', title: 'Joy', meta: 'Clay, woodsticks, reflective triangle pieces', desc: EMOTIONS_JOY_DESC },
+      { src: 'images/emotions-fear.jpg', title: 'Fear', meta: 'Woodsticks, PVC boards, steel wire', desc: EMOTIONS_FEAR_DESC },
+      { src: 'images/emotions-anger-1.jpg', title: 'Anger', meta: 'Woodsticks, paper', desc: EMOTIONS_ANGER_DESC },
+      { src: 'images/emotions-anger-2.jpg', title: 'Anger', meta: 'Woodsticks, paper', desc: EMOTIONS_ANGER_DESC },
+      { src: 'images/emotions-anger-3.jpg', title: 'Anger', meta: 'Woodsticks, paper', desc: EMOTIONS_ANGER_DESC }
     ]
   }
 };
@@ -75,20 +86,30 @@ function renderWorkList() {
 function renderGalleryGrid() {
   const grid = document.getElementById('gallery-grid');
   if (!grid) return;
-  const covers = Object.keys(GALLERIES).map(category => ({ category, item: GALLERIES[category].items[0] }));
+  const covers = Object.keys(GALLERIES).map(category => {
+    const gallery = GALLERIES[category];
+    const firstItem = gallery.items[0];
+    return {
+      category,
+      src: gallery.cover || firstItem.src,
+      title: gallery.coverTitle || firstItem.title,
+      meta: gallery.coverMeta || firstItem.meta,
+      link: firstItem.link
+    };
+  });
   grid.innerHTML = covers.map(entry => {
-    const tag = entry.item.link ? 'a' : 'button';
-    const openAttr = entry.item.link
-      ? `href="${entry.item.link}" target="_blank" rel="noopener"`
+    const tag = entry.link ? 'a' : 'button';
+    const openAttr = entry.link
+      ? `href="${entry.link}" target="_blank" rel="noopener"`
       : `onclick="openLightbox('${entry.category}', 0)"`;
     return `
     <${tag} class="gallery-item" ${openAttr}>
       <span class="gallery-thumb">
-        <img src="${entry.item.src}" alt="${entry.item.title}" loading="lazy" onerror="imgFallback(this)">
+        <img src="${entry.src}" alt="${entry.title}" loading="lazy" onerror="imgFallback(this)">
       </span>
       <span class="gallery-caption">
-        <span class="gallery-title">${entry.item.title}</span>
-        <span class="gallery-meta">${entry.item.meta}</span>
+        <span class="gallery-title">${entry.title}</span>
+        <span class="gallery-meta">${entry.meta}</span>
       </span>
     </${tag}>
   `;
@@ -114,6 +135,9 @@ function renderLightbox() {
   document.getElementById('lb-title').textContent = item.title;
   document.getElementById('lb-meta').textContent = item.meta;
   document.getElementById('lb-meta-sep').hidden = !item.meta;
+  const descEl = document.getElementById('lb-desc');
+  descEl.textContent = item.desc || '';
+  descEl.hidden = !item.desc;
 
   const thumbs = document.getElementById('lb-thumbs');
   if (thumbs) {
