@@ -30,10 +30,17 @@ const GALLERIES = {
     items: [
       { src: 'images/painting-market.jpg', title: 'Untitled', meta: '' }
     ]
+  },
+  sculpture: {
+    subtitle: 'Sculpture.',
+    items: [
+      { src: 'images/sculpture-1.jpg', title: 'Untitled', meta: '' },
+      { src: 'images/sculpture-2.webp', title: 'Untitled', meta: '' }
+    ]
   }
 };
 
-const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting' };
+const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting', sculpture: '3D / Sculpture' };
 
 let currentGallery = 'digital';
 let currentLbIndex = 0;
