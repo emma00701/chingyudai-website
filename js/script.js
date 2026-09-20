@@ -29,7 +29,7 @@ const GALLERIES = {
   figures: {
     subtitle: 'Painting.',
     items: [
-      { src: 'images/painting-figures.jpg', title: 'Untitled', meta: '' }
+      { src: 'images/painting-figures.jpg', title: 'Drepression and War-time America', meta: 'Acrylic Painting' }
     ]
   },
   market: {
