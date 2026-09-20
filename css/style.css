@@ -473,53 +473,9 @@ h1, h2, p {
   margin-top: 40px;
 }
 
-/* ===== Gallery page ===== */
-.projects-heading {
-  display: flex;
-  gap: 30px;
-  align-items: end;
-  justify-content: space-between;
-}
-
-.project-filters {
-  display: flex;
-  gap: 8px;
-  padding-bottom: 2px;
-}
-
-.filter-button {
-  border: 1px solid var(--line);
-  border-radius: 0;
-  padding: 11px 15px;
-  background: rgba(253, 231, 234, 0.72);
-  color: var(--ink);
-  cursor: pointer;
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 0;
-  transition: background 180ms ease, color 180ms ease;
-}
-
-.filter-button:hover,
-.filter-button.active {
-  background: var(--ink);
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.gallery-intro {
-  min-height: 66px;
-  padding-top: 18px;
-}
-
-.gallery-intro p {
-  color: var(--muted);
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
+/* ===== Gallery section: Airla-style numbered grid ===== */
 .gallery-grid {
+  margin-top: 38px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 44px 22px;
@@ -554,27 +510,39 @@ h1, h2, p {
 
 .gallery-caption {
   display: block;
-  padding-top: 11px;
+  padding-top: 14px;
 }
 
-.gallery-title,
-.gallery-meta {
-  display: block;
+.gallery-caption-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .gallery-title {
-  font-size: 20px;
-  font-style: italic;
-  line-height: 1.15;
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--maroon);
 }
 
-.gallery-meta {
-  padding-top: 4px;
+.gallery-index {
+  flex: 0 0 auto;
   color: var(--muted);
   font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 10px;
-  line-height: 1.5;
-  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.gallery-desc {
+  display: block;
+  padding-top: 6px;
+  color: var(--muted);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.55;
 }
 
 /* Placeholder shown until a real artwork photo exists at the given path */
@@ -756,19 +724,6 @@ h1, h2, p {
 
   .section-heading h1 {
     font-size: 68px;
-  }
-
-  .projects-heading {
-    display: block;
-  }
-
-  .project-filters {
-    overflow-x: auto;
-    padding-top: 22px;
-  }
-
-  .filter-button {
-    flex: 0 0 auto;
   }
 
   .gallery-grid {

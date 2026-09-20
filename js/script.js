@@ -57,25 +57,25 @@ function renderWorkList() {
   list.innerHTML = rows;
 }
 
-/* legacy grid renderer (used by gallery.html if present) */
-function showGallery(category) {
-  currentGallery = category;
-  const gallery = GALLERIES[category];
-  const subtitle = document.getElementById('gallery-subtitle');
-  if (subtitle) subtitle.textContent = gallery.subtitle;
-  document.querySelectorAll('.filter-button').forEach(button => {
-    button.classList.toggle('active', button.dataset.gallery === category);
-  });
+/* Airla-style numbered grid: every item across every category, one flat sequence */
+function renderGalleryGrid() {
   const grid = document.getElementById('gallery-grid');
   if (!grid) return;
-  grid.innerHTML = gallery.items.map((item, index) => `
-    <button class="gallery-item" onclick="openLightbox('${category}', ${index})">
+  const flat = [];
+  Object.keys(GALLERIES).forEach(category => {
+    GALLERIES[category].items.forEach((item, index) => flat.push({ category, index, item }));
+  });
+  grid.innerHTML = flat.map((entry, position) => `
+    <button class="gallery-item" onclick="openLightbox('${entry.category}', ${entry.index})">
       <span class="gallery-thumb">
-        <img src="${item.src}" alt="${item.title}" loading="lazy" onerror="imgFallback(this)">
+        <img src="${entry.item.src}" alt="${entry.item.title}" loading="lazy" onerror="imgFallback(this)">
       </span>
       <span class="gallery-caption">
-        <span class="gallery-title">${item.title}</span>
-        <span class="gallery-meta">${item.meta}</span>
+        <span class="gallery-caption-row">
+          <span class="gallery-title">${entry.item.title}</span>
+          <span class="gallery-index">${String(position + 1).padStart(2, '0')}</span>
+        </span>
+        <span class="gallery-desc">${entry.item.desc}</span>
       </span>
     </button>
   `).join('');
@@ -142,7 +142,7 @@ if (document.querySelector('.intro-animation')) {
 
 /* render the gallery grid if present */
 if (document.getElementById('gallery-grid')) {
-  showGallery('paintings');
+  renderGalleryGrid();
 }
 
 /* render the single-page work list if present */
