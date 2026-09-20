@@ -24,10 +24,16 @@ const GALLERIES = {
       { src: 'images/3d/junk-food-house.jpg', title: 'Junk Food House', meta: 'straws, molded pulp trays, bamboo, LED light', desc: 'Built entirely from junk-food packaging and lit from within by red LED.' },
       { src: 'images/3d/giant-small-town.jpg', title: 'Giant in a Small Town', meta: 'wood, ink, construction paper', desc: 'Two elongated giants stand at the entrance of a street market, exploring how scale changes perspective in the city.' }
     ]
+  },
+  digital: {
+    subtitle: 'Product and UX design work.',
+    items: [
+      { src: 'images/digital/kuma.png', title: 'Kuma', meta: 'AI Personal Expense Tracking Agent', desc: 'AI Personal Expense Tracking Agent' }
+    ]
   }
 };
 
-const CATEGORY_LABELS = { paintings: 'Painting', drawings: 'Drawing', '3d': '3D / Sculpture' };
+const CATEGORY_LABELS = { paintings: 'Painting', drawings: 'Drawing', '3d': '3D / Sculpture', digital: 'Digital / Product' };
 
 let currentGallery = 'paintings';
 let currentLbIndex = 0;
