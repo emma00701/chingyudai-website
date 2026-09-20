@@ -56,8 +56,7 @@ const GALLERIES = {
       { src: 'images/blockmodel-1.jpg', title: 'Untitled', meta: '' },
       { src: 'images/blockmodel-2.jpg', title: 'Untitled', meta: '' },
       { src: 'images/blockmodel-3.jpg', title: 'Untitled', meta: '' },
-      { src: 'images/blockmodel-4.jpg', title: 'Untitled', meta: '' },
-      { src: 'images/blockmodel-info.jpg', title: 'Untitled', meta: '', desc: BLOCKMODEL_DESC }
+      { src: 'images/blockmodel-4.jpg', title: 'Untitled', meta: '', desc: BLOCKMODEL_DESC }
     ]
   }
 };
