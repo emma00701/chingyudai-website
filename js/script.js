@@ -4,17 +4,25 @@ const GALLERIES = {
     items: [
       { src: 'images/Kuma_1.png', title: 'Kuma', meta: 'AI Personal Expense Tracking Agent', desc: 'AI Personal Expense Tracking Agent', link: 'https://get-kuma.com' }
     ]
+  },
+  circus: {
+    subtitle: 'Acrylics, oil pastels.',
+    items: [
+      { src: 'images/circus_1.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels', desc: '' },
+      { src: 'images/circus_2.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels', desc: '' },
+      { src: 'images/circus_3.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels', desc: '' }
+    ]
   }
 };
 
-const CATEGORY_LABELS = { digital: 'Digital / Product' };
+const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting' };
 
 let currentGallery = 'digital';
 let currentLbIndex = 0;
 
 /* shows the pig-outline placeholder in place of a photo that hasn't been added yet */
 function imgFallback(imgEl) {
-  const wrap = imgEl.closest('.gallery-thumb, .lightbox-img-wrap');
+  const wrap = imgEl.closest('.gallery-thumb, .lightbox-img-wrap, .lightbox-thumb');
   if (wrap) wrap.classList.add('img-fallback');
 }
 
@@ -37,19 +45,17 @@ function renderWorkList() {
   list.innerHTML = rows;
 }
 
-/* plain image grid: every item across every category, one flat sequence */
+/* plain image grid: one cover tile per category (its first item); the rest of
+   that category's images are viewed via the lightbox's thumbnail strip */
 function renderGalleryGrid() {
   const grid = document.getElementById('gallery-grid');
   if (!grid) return;
-  const flat = [];
-  Object.keys(GALLERIES).forEach(category => {
-    GALLERIES[category].items.forEach((item, index) => flat.push({ category, index, item }));
-  });
-  grid.innerHTML = flat.map(entry => {
+  const covers = Object.keys(GALLERIES).map(category => ({ category, item: GALLERIES[category].items[0] }));
+  grid.innerHTML = covers.map(entry => {
     const tag = entry.item.link ? 'a' : 'button';
     const openAttr = entry.item.link
       ? `href="${entry.item.link}" target="_blank" rel="noopener"`
-      : `onclick="openLightbox('${entry.category}', ${entry.index})"`;
+      : `onclick="openLightbox('${entry.category}', 0)"`;
     return `
     <${tag} class="gallery-item" ${openAttr}>
       <span class="gallery-thumb">
@@ -73,7 +79,8 @@ function openLightbox(category, index) {
 }
 
 function renderLightbox() {
-  const item = GALLERIES[currentGallery].items[currentLbIndex];
+  const items = GALLERIES[currentGallery].items;
+  const item = items[currentLbIndex];
   const img = document.getElementById('lb-img');
   img.closest('.lightbox-img-wrap').classList.remove('img-fallback');
   img.onerror = () => imgFallback(img);
@@ -82,6 +89,21 @@ function renderLightbox() {
   document.getElementById('lb-title').textContent = item.title;
   document.getElementById('lb-meta').textContent = item.meta;
   document.getElementById('lb-desc').textContent = item.desc;
+
+  const thumbs = document.getElementById('lb-thumbs');
+  if (thumbs) {
+    thumbs.hidden = items.length <= 1;
+    thumbs.innerHTML = items.map((thumbItem, index) => `
+      <button class="lightbox-thumb${index === currentLbIndex ? ' active' : ''}" onclick="jumpLightbox(${index})" aria-label="View image ${index + 1}">
+        <img src="${thumbItem.src}" alt="" loading="lazy" onerror="imgFallback(this)">
+      </button>
+    `).join('');
+  }
+}
+
+function jumpLightbox(index) {
+  currentLbIndex = index;
+  renderLightbox();
 }
 
 function closeLightbox() {

@@ -584,10 +584,50 @@ h1, h2, p {
 
 .lightbox-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
-  gap: 42px;
+  grid-template-columns: 76px minmax(0, 1fr) 260px;
+  gap: 28px;
   align-items: center;
-  width: min(1080px, 100%);
+  width: min(1160px, 100%);
+}
+
+.lightbox-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 78vh;
+  overflow-y: auto;
+}
+
+.lightbox-thumb {
+  display: block;
+  flex: 0 0 auto;
+  width: 76px;
+  height: 76px;
+  border: 2px solid transparent;
+  border-radius: 0;
+  padding: 0;
+  background: #fff;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.lightbox-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lightbox-thumb.active {
+  border-color: var(--maroon);
+}
+
+.lightbox-thumb.img-fallback {
+  background: #fff url("../images/pig-outline-only.png") no-repeat center/45% auto;
+}
+
+.lightbox-thumb.img-fallback img {
+  display: none;
 }
 
 .lightbox-img-wrap img {
@@ -732,6 +772,20 @@ h1, h2, p {
 
   .lightbox-inner {
     display: block;
+  }
+
+  .lightbox-thumbs {
+    flex-direction: row;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+
+  .lightbox-thumb {
+    width: 64px;
+    height: 64px;
   }
 
   .lightbox-img-wrap img {
