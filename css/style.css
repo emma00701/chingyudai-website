@@ -368,6 +368,7 @@ h1, h2, p {
 .hero-headline-title {
   margin: 0;
   text-align: center;
+  font-family: 'Newsreader', serif;
   font-size: clamp(34px, 4.6vw, 52px);
   font-weight: 600;
   color: var(--maroon);
@@ -377,6 +378,7 @@ h1, h2, p {
   margin: clamp(18px, 4vw, 36px) auto 0;
   max-width: 640px;
   text-align: center;
+  font-family: 'Inter', Arial, sans-serif;
   font-size: clamp(18px, 2vw, 21px);
   line-height: 1.6;
   color: var(--maroon);
@@ -407,6 +409,7 @@ h1, h2, p {
 
 .about-extra-heading {
   margin: 0 0 14px;
+  font-family: 'Newsreader', serif;
   font-size: 22px;
   font-weight: 700;
   color: var(--maroon);
@@ -414,6 +417,7 @@ h1, h2, p {
 
 .about-extra-col p {
   margin: 0 0 20px;
+  font-family: 'Inter', Arial, sans-serif;
   font-size: 17px;
   line-height: 1.6;
   color: var(--maroon);
@@ -435,6 +439,7 @@ h1, h2, p {
 
 .exp-role {
   display: block;
+  font-family: 'Inter', Arial, sans-serif;
   font-size: 17px;
   line-height: 1.5;
   color: var(--maroon);
@@ -446,6 +451,7 @@ h1, h2, p {
 
 .exp-year {
   display: block;
+  font-family: 'Inter', Arial, sans-serif;
   font-size: 17px;
   line-height: 1.5;
   color: var(--maroon);
@@ -528,8 +534,10 @@ h1, h2, p {
 }
 
 .gallery-title {
-  font-size: 17px;
-  font-style: italic;
+  font-family: 'Newsreader', serif;
+  font-size: 19px;
+  font-weight: 500;
+  font-style: normal;
   color: var(--maroon);
 }
 
@@ -672,7 +680,9 @@ h1, h2, p {
 }
 
 .lightbox-caption #lb-title {
-  font-weight: 600;
+  font-family: 'Newsreader', serif;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .lightbox-caption-sep,
