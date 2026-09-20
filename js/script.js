@@ -23,7 +23,7 @@ const GALLERIES = {
   joker: {
     subtitle: 'Painting.',
     items: [
-      { src: 'images/painting-joker.jpg', title: 'Untitled', meta: '' }
+      { src: 'images/painting-joker.jpg', title: 'The Joker', meta: 'Mixed Media' }
     ]
   },
   figures: {
