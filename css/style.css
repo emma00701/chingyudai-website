@@ -586,10 +586,6 @@ h1, h2, p {
   background: #f7f2ec;
 }
 
-.lightbox-stage {
-  padding-bottom: 56px;
-}
-
 .lightbox.open {
   display: flex;
 }
@@ -721,22 +717,6 @@ h1, h2, p {
   font-size: 22px;
   font-weight: 300;
   line-height: 1;
-}
-
-.lightbox-nav {
-  position: fixed;
-  bottom: 24px;
-  display: flex;
-  gap: 20px;
-}
-
-.lightbox-nav button {
-  border: 0;
-  background: none;
-  cursor: pointer;
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 11px;
-  text-transform: uppercase;
 }
 
 /* ===== Footer (shared across every page) ===== */
