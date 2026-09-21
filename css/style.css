@@ -407,6 +407,10 @@ h1, h2, p {
   margin-top: clamp(40px, 7vw, 76px);
 }
 
+.about-extra-col:last-child {
+  text-align: right;
+}
+
 .about-extra-heading {
   margin: 0 0 14px;
   font-family: 'Newsreader', serif;
@@ -460,6 +464,10 @@ h1, h2, p {
 @media (max-width: 760px) {
   .about-extra {
     grid-template-columns: 1fr;
+  }
+
+  .about-extra-col:last-child {
+    text-align: left;
   }
 }
 
