@@ -1,36 +1,96 @@
+const EMOTIONS_JOY_DESC = "The first model, representing joy, was made out of clay, and reflectice triangle pieces I made from woodsticks and laser paper. GIven the reflective nature of the laser paper, I envisioned the memories from a dream were all captured and incapsulated by the triangole. However, I usally have multiple different memories all intertwined together, forming a dream that jumps from one memory to another. The pieces of reflective triangles are great mediums to illustrate such feelings.";
+const EMOTIONS_FEAR_DESC = "The second model, representing fear, was made out of woodsticks, boxes I made from PVC boards, and balls entangled by steel wires. This model has strong structure, yet they are hollow on the inside, creating a sense of fear and uncertainty.";
+const EMOTIONS_ANGER_DESC = "the third model, representing anger, is made out of woodsticks and paper. I wanted to deliver how broken the emotions are when anger takes control of it through a dilapitated building. The windows are in dark colors in order to emphasize the structure.";
+const BLOCKMODEL_DESC = "The inspiration of this project was from one of my hobbies—assembling models. I finished this project with similar process of assembling models as well, made different components of each part then put them together. I chose the armour of a GUNDAM model to be the prototype of my main structure. Other parts were distributed sporadically around the main building are like the missiles and lasers launched by the armour.";
+const JUNKFOODHOUSE_DESC = "The inspiration of this model building is my ideal house using materials that I got from ordering or delievery food that were considered not very healthy. The straws and the molded pulp trays were from the bubble tea I would order on a daily basis, and the bamboo sticks were the skewers from the barbeque. I collected all of them from the summer, cleaned them, and glued them together to from a sense of space. The LED light on the bottom were tangled within the house, making the details from those particular materials stand out.";
+const GIANT_DESC = "How would the our perspective of the space that we are in? Growing up, as I got taller, my vision of shelves in the supermarket was gradually brought up, opening up more options for me to buy. However, when wandering around in a city, I was never tall enough to gain a new perspective for the buildings.\n\nI imagined two giants, tall and skinny, standing in front of the entrance of a street market in my neighborhood and took pictures from their point of view. The things they see entirely different from me, which inspired my to discover more about perspectives in real life and how that affects us.";
+
 const GALLERIES = {
-  paintings: {
-    subtitle: 'Acrylic, colored pencil, crayon, and mixed media.',
+  digital: {
+    subtitle: 'Product and UX design work.',
     items: [
-      { src: 'images/paintings/markets.jpg', title: 'Fruit and Vegetable Market in Hong Kong', meta: '18 × 20 in · acrylic on canvas', desc: 'A vibrant scene of daily life in Hong Kong, with vendors, color, and movement rendered in bold, expressive brushwork.' },
-      { src: 'images/paintings/joker.jpg', title: 'The Joker', meta: '16 × 20 in · mixed media on canvas', desc: 'A figure surrounded by playing cards, exploring chance, performance, and the faces we wear.' },
-      { src: 'images/paintings/circus.jpg', title: 'The Forgotten Childhood', meta: '16 × 20 in · colored pencil, crayon, acrylic on paper', desc: 'The multifaceted positions held by circus performers represent the many talents a young self aspires to acquire.' },
-      { src: 'images/paintings/circus-large.jpg', title: 'The Forgotten Childhood (detail)', meta: 'close-up · colored pencil, crayon, acrylic on paper', desc: 'Close-up detail revealing the dense layering of color and texture across the surface.' },
-      { src: 'images/paintings/circus-small.jpg', title: 'The Forgotten Childhood (detail II)', meta: 'close-up · colored pencil, crayon, acrylic on paper', desc: 'A second close-up capturing the intricate mark-making and layered media.' }
+      { src: 'images/Kuma_1.png', title: 'Kuma', meta: 'AI Personal Expense Tracking Agent', link: 'https://get-kuma.com' }
     ]
   },
-  drawings: {
-    subtitle: 'Ink, pencil, charcoal, and mixed media on paper.',
+  circus: {
+    subtitle: 'Acrylics, oil pastels.',
     items: [
-      { src: 'images/drawings/hallway.jpg', title: 'Last Hope in the Middle of the Covid-19 Outbreak', meta: '16 × 20 in · pencil, charcoal, acrylic on paper', desc: 'Confetti remaining in the hall after everyone left campus in spring 2020, with a lone red boat adrift in the silence.' },
-      { src: 'images/drawings/capitalism-food.jpg', title: 'Capitalism in Food', meta: '23 × 33 in · ink and posca markers on paper', desc: 'Four vignettes examining food and capitalism through surrealist industrial elements.' }
+      { src: 'images/circus_1.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels' },
+      { src: 'images/circus_2.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels' },
+      { src: 'images/circus_3.jpg', title: 'Circus', meta: 'Acrylics, Oil Pastels' }
     ]
   },
-  '3d': {
-    subtitle: 'Sculpture, architectural models, and mixed materials.',
+  joker: {
+    subtitle: 'Painting.',
     items: [
-      { src: 'images/3d/block.jpg', title: 'Block', meta: 'dutch paper, wooden strips & boards · 2022', desc: 'Inspired by model assembly, this piece draws from depression-era architecture and the armor structure of a Gundam model.' },
-      { src: 'images/3d/emotions.jpg', title: 'Emotions: Joy, Fear & Anger', meta: 'clay, paper, woodsticks, PVC boards, steel wire · 2022', desc: 'Three sculptures representing distinct emotional states: joy, fear, and anger.' },
-      { src: 'images/3d/junk-food-house.jpg', title: 'Junk Food House', meta: 'straws, molded pulp trays, bamboo, LED light', desc: 'Built entirely from junk-food packaging and lit from within by red LED.' },
-      { src: 'images/3d/giant-small-town.jpg', title: 'Giant in a Small Town', meta: 'wood, ink, construction paper', desc: 'Two elongated giants stand at the entrance of a street market, exploring how scale changes perspective in the city.' }
+      { src: 'images/painting-joker.jpg', title: 'The Joker', meta: 'Mixed Media' }
+    ]
+  },
+  figures: {
+    subtitle: 'Painting.',
+    items: [
+      { src: 'images/painting-figures.jpg', title: 'Drepression and War-time America', meta: 'Acrylic Painting' }
+    ]
+  },
+  market: {
+    subtitle: 'Painting.',
+    items: [
+      { src: 'images/painting-market.jpg', title: 'Fruit Markets in Hong Kong', meta: 'Acrylic Painting' }
+    ]
+  },
+  sculpture: {
+    subtitle: 'Sculpture.',
+    cover: 'images/emotions-cover.jpg',
+    coverTitle: 'Emotions: Joy, Fear & Anger',
+    coverMeta: 'Clay, woodsticks, PVC boards, steel wire, paper',
+    items: [
+      { src: 'images/sculpture-1.jpg', title: 'Joy', meta: 'Clay, woodsticks, reflective triangle pieces', desc: EMOTIONS_JOY_DESC },
+      { src: 'images/sculpture-2.webp', title: 'Joy', meta: 'Clay, woodsticks, reflective triangle pieces', desc: EMOTIONS_JOY_DESC },
+      { src: 'images/emotions-fear.jpg', title: 'Fear', meta: 'Woodsticks, PVC boards, steel wire', desc: EMOTIONS_FEAR_DESC },
+      { src: 'images/emotions-anger-1.jpg', title: 'Anger', meta: 'Woodsticks, paper', desc: EMOTIONS_ANGER_DESC },
+      { src: 'images/emotions-anger-2.jpg', title: 'Anger', meta: 'Woodsticks, paper', desc: EMOTIONS_ANGER_DESC },
+      { src: 'images/emotions-anger-3.jpg', title: 'Anger', meta: 'Woodsticks, paper', desc: EMOTIONS_ANGER_DESC }
+    ]
+  },
+  blockmodel: {
+    subtitle: 'Sculpture.',
+    items: [
+      { src: 'images/blockmodel-1.jpg', title: 'The Blocks', meta: '', desc: BLOCKMODEL_DESC },
+      { src: 'images/blockmodel-2.jpg', title: 'The Blocks', meta: '', desc: BLOCKMODEL_DESC },
+      { src: 'images/blockmodel-3.jpg', title: 'The Blocks', meta: '', desc: BLOCKMODEL_DESC },
+      { src: 'images/blockmodel-4.jpg', title: 'The Blocks', meta: '', desc: BLOCKMODEL_DESC }
+    ]
+  },
+  junkfoodhouse: {
+    subtitle: 'Sculpture.',
+    items: [
+      { src: 'images/junkfoodhouse-1.jpg', title: 'Junk Food House', meta: 'Straws, molded pulp trays, bamboo sticks, wooden boards, LED light · L24 × W18 × H16 in', desc: JUNKFOODHOUSE_DESC }
+    ]
+  },
+  giant: {
+    subtitle: 'Sculpture.',
+    items: [
+      { src: 'images/giant-1.jpg', title: 'Giant in a Small Town', meta: 'Wooden blocks, construction paper, ink, white gel pen · L17 × W11 × H4 in', desc: GIANT_DESC }
+    ]
+  },
+  capitalismInFood: {
+    subtitle: 'Drawing.',
+    items: [
+      { src: 'images/capitalism-in-food.jpg', title: 'Capitalism in Food', meta: 'Ink, posca marker' }
     ]
   }
 };
 
-const CATEGORY_LABELS = { paintings: 'Painting', drawings: 'Drawing', '3d': '3D / Sculpture' };
+const CATEGORY_LABELS = { digital: 'Digital / Product', circus: 'Painting', joker: 'Painting', figures: 'Painting', market: 'Painting', sculpture: '3D / Sculpture', blockmodel: '3D / Sculpture', junkfoodhouse: '3D / Sculpture', giant: '3D / Sculpture', capitalismInFood: 'Drawing' };
 
-let currentGallery = 'paintings';
+let currentGallery = 'digital';
 let currentLbIndex = 0;
+
+/* shows the pig-outline placeholder in place of a photo that hasn't been added yet */
+function imgFallback(imgEl) {
+  const wrap = imgEl.closest('.gallery-thumb, .lightbox-img-wrap, .lightbox-thumb');
+  if (wrap) wrap.classList.add('img-fallback');
+}
 
 /* madhurima-style scannable work list */
 function renderWorkList() {
@@ -51,28 +111,39 @@ function renderWorkList() {
   list.innerHTML = rows;
 }
 
-/* legacy grid renderer (used by gallery.html if present) */
-function showGallery(category) {
-  currentGallery = category;
-  const gallery = GALLERIES[category];
-  const subtitle = document.getElementById('gallery-subtitle');
-  if (subtitle) subtitle.textContent = gallery.subtitle;
-  document.querySelectorAll('.filter-button').forEach(button => {
-    button.classList.toggle('active', button.dataset.gallery === category);
-  });
+/* plain image grid: one cover tile per category (its first item); the rest of
+   that category's images are viewed via the lightbox's thumbnail strip */
+function renderGalleryGrid() {
   const grid = document.getElementById('gallery-grid');
   if (!grid) return;
-  grid.innerHTML = gallery.items.map((item, index) => `
-    <button class="gallery-item" onclick="openLightbox('${category}', ${index})">
+  const covers = Object.keys(GALLERIES).map(category => {
+    const gallery = GALLERIES[category];
+    const firstItem = gallery.items[0];
+    return {
+      category,
+      src: gallery.cover || firstItem.src,
+      title: gallery.coverTitle || firstItem.title,
+      meta: gallery.coverMeta || firstItem.meta,
+      link: firstItem.link
+    };
+  });
+  grid.innerHTML = covers.map(entry => {
+    const tag = entry.link ? 'a' : 'button';
+    const openAttr = entry.link
+      ? `href="${entry.link}" target="_blank" rel="noopener"`
+      : `onclick="openLightbox('${entry.category}', 0)"`;
+    return `
+    <${tag} class="gallery-item" ${openAttr}>
       <span class="gallery-thumb">
-        <img src="${item.src}" alt="${item.title}" loading="lazy">
+        <img src="${entry.src}" alt="${entry.title}" loading="lazy" onerror="imgFallback(this)">
       </span>
       <span class="gallery-caption">
-        <span class="gallery-title">${item.title}</span>
-        <span class="gallery-meta">${item.meta}</span>
+        <span class="gallery-title">${entry.title}</span>
+        <span class="gallery-meta">${entry.meta}</span>
       </span>
-    </button>
-  `).join('');
+    </${tag}>
+  `;
+  }).join('');
 }
 
 function openLightbox(category, index) {
@@ -84,12 +155,34 @@ function openLightbox(category, index) {
 }
 
 function renderLightbox() {
-  const item = GALLERIES[currentGallery].items[currentLbIndex];
-  document.getElementById('lb-img').src = item.src;
-  document.getElementById('lb-img').alt = item.title;
+  const items = GALLERIES[currentGallery].items;
+  const item = items[currentLbIndex];
+  const img = document.getElementById('lb-img');
+  img.closest('.lightbox-img-wrap').classList.remove('img-fallback');
+  img.onerror = () => imgFallback(img);
+  img.src = item.src;
+  img.alt = item.title;
   document.getElementById('lb-title').textContent = item.title;
   document.getElementById('lb-meta').textContent = item.meta;
-  document.getElementById('lb-desc').textContent = item.desc;
+  document.getElementById('lb-meta-sep').hidden = !item.meta;
+  const descEl = document.getElementById('lb-desc');
+  descEl.textContent = item.desc || '';
+  descEl.hidden = !item.desc;
+
+  const thumbs = document.getElementById('lb-thumbs');
+  if (thumbs) {
+    thumbs.hidden = items.length <= 1;
+    thumbs.innerHTML = items.map((thumbItem, index) => `
+      <button class="lightbox-thumb${index === currentLbIndex ? ' active' : ''}" onclick="jumpLightbox(${index})" aria-label="View image ${index + 1}">
+        <img src="${thumbItem.src}" alt="" loading="lazy" onerror="imgFallback(this)">
+      </button>
+    `).join('');
+  }
+}
+
+function jumpLightbox(index) {
+  currentLbIndex = index;
+  renderLightbox();
 }
 
 function closeLightbox() {
@@ -133,7 +226,7 @@ if (document.querySelector('.intro-animation')) {
 
 /* render the gallery grid if present */
 if (document.getElementById('gallery-grid')) {
-  showGallery('paintings');
+  renderGalleryGrid();
 }
 
 /* render the single-page work list if present */
