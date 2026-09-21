@@ -443,7 +443,7 @@ h1, h2, p {
 
 .exp-role {
   display: block;
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
   font-size: 17px;
   line-height: 1.5;
   color: var(--maroon);
@@ -455,7 +455,7 @@ h1, h2, p {
 
 .exp-year {
   display: block;
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
   font-size: 17px;
   line-height: 1.5;
   color: var(--maroon);
