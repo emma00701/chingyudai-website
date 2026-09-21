@@ -55,9 +55,9 @@ const GALLERIES = {
   blockmodel: {
     subtitle: 'Sculpture.',
     items: [
-      { src: 'images/blockmodel-1.jpg', title: 'The Blocks', meta: '' },
-      { src: 'images/blockmodel-2.jpg', title: 'The Blocks', meta: '' },
-      { src: 'images/blockmodel-3.jpg', title: 'The Blocks', meta: '' },
+      { src: 'images/blockmodel-1.jpg', title: 'The Blocks', meta: '', desc: BLOCKMODEL_DESC },
+      { src: 'images/blockmodel-2.jpg', title: 'The Blocks', meta: '', desc: BLOCKMODEL_DESC },
+      { src: 'images/blockmodel-3.jpg', title: 'The Blocks', meta: '', desc: BLOCKMODEL_DESC },
       { src: 'images/blockmodel-4.jpg', title: 'The Blocks', meta: '', desc: BLOCKMODEL_DESC }
     ]
   },
